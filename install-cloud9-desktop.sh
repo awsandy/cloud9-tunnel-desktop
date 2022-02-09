@@ -86,7 +86,7 @@ sudo yum  install Lens-5.3.4-latest.20220120.1.x86_64.rpm  -y -q
 echo "VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q
-
+sudo cat /etc/sysconfig/desktop
 date
 # /usr/bin/google-chrome-stable
 echo "look in /usr/share/applications"
