@@ -2,6 +2,7 @@
 set +x
 cd ~/environment
 sudo yum install -q -y wget smartmontools deltarpm jq nmap
+sudo yum reinstall python3-pip
 # ------  resize OS disk -----------
 
 # Specify the desired volume size in GiB as a command-line argument. If not specified, default to 20 GiB.
