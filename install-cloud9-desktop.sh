@@ -83,7 +83,6 @@ sudo yum install dbeaver-ce-latest-stable.x86_64.rpm  -y -q
 echo "Lens"
 wget https://api.k8slens.dev/binaries/Lens-5.3.4-latest.20220120.1.x86_64.rpm -q
 sudo yum  install Lens-5.3.4-latest.20220120.1.x86_64.rpm  -y -q
-#
 echo "VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q

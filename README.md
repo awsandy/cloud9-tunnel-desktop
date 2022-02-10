@@ -8,6 +8,8 @@ sudo curl https://intoli.com/install-google-chrome.sh | bash
 sudo yum install ./google-chrome-stable_current_*.rpm
 
 Lens
+https://api.k8slens.dev/binaries/Lens-5.3.4-latest.20220120.1.x86_64.rpm
+
 
 
 https://dbeaver.io/download/
