@@ -1,4 +1,4 @@
-## Starting a Desktop environment on AWS Cloud9
+## Starting a Desktop Environment on AWS Cloud9 and access it securely using AWS Systems Manager port forwarding.
 
 ![Desktop](desktop.jpg)
 
@@ -123,7 +123,7 @@ aws ssm start-session --target i-xxxxxxxxxxx --document-name AWS-StartPortForwar
 ```
 
 please see this blog post for further details on SSM port forwarding:
- 
+
 https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/
 
 
