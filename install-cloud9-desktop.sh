@@ -58,9 +58,8 @@ rm -f awscliv2.zip
 date
 echo "======= X11 mate desktop install ..."
 sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
-sudo echo "PREFERRED=/usr/bin/mate-session" > /etc/sysconfig/desktop
 
-sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -q
 
 sudo systemctl set-default graphical.target
 echo "======= xrdp"
@@ -68,7 +67,7 @@ sudo yum -y install xrdp tigervnc-server -q 2> /dev/null
 #yum -y install xrdp
 sudo systemctl start xrdp
 sudo systemctl enable xrdp
-sudo netstat -antup | grep xrdp
+sudo netstat -antup | grep 3389
 
 echo "X11 stuff again ......"
 sudo amazon-linux-extras install -y mate-desktop1.x
