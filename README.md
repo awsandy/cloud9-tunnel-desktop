@@ -1,6 +1,8 @@
-## Starting a Desktop on Cloud9
+## Starting a Desktop environment on AWS Cloud9
 
 ![Desktop](desktop.jpg)
+
+----
 
 ### 1. Create a Cloud9 environment
 
