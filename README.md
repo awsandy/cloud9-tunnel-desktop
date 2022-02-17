@@ -49,7 +49,7 @@ This script:
 You may see some yum lock errors during the install of the sample apps, these should resolve themselves after seeing the error 3 or 4 times.
 
 
-**Create a password for the user `ec2-user`.**
+**Next - Create a password for the user `ec2-user`.**
 
 ```bash
 sudo passwd ec2-user
@@ -68,7 +68,7 @@ passwd: all authentication tokens updated successfully.
 
 ### 3. Check your permissions 
 
-Ensure you have these permissions for your IAM user or IAM role you use on your **local machine**:
+Ensure you have these permissions for your IAM user or IAM role you use to sign in to AWS on your **local machine**:
 
 ```json
 {
@@ -93,12 +93,12 @@ Ensure you have these permissions for your IAM user or IAM role you use on your 
 
 *Best Practice: reduce the scope of these permissions using a more specific resource and/or adding a condition clause.*
 
-Note: IAM Permissions may take a few minutes to propagate. 
+Note: Modified IAM Permissions may take a few minutes to fully propagate. 
 
 
 -----
 
-### 3. Tunnel to your desktop from your local machine securely using SSM
+### 3. Tunnel to your desktop from your local machine securely using AWS Systems Manager
 
 Login to AWS using the AWS cli using your local machine
 
