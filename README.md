@@ -39,15 +39,23 @@ This script:
 * * Microsoft's Visual Studio Code IDE
 * * LENS a tool for managing Kubernetes clusters (including EKS)
   
+You may see some yum lock errors during the install of the sample apps, these should resolve themselves after seeing the error 3 or 4 times.
 
 
 **Create a password for the user `ec2-user`.**
 
 ```bash
-passwd ec2-user
-
+sudo passwd ec2-user
 ```
 
+Enter a password twice ....
+
+```
+Changing password for user ec2-user.
+New password: 
+Retype new password: 
+passwd: all authentication tokens updated successfully.
+```
 
 ----
 
