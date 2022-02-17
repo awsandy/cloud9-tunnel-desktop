@@ -139,4 +139,6 @@ You should see icons for the applications we installed (Chrome, DBeaver, LENS an
 
 Right click on the applications icon and `Copy to Desktop`
 
+Enjoy the desktop:
 
+[]( | width=100)

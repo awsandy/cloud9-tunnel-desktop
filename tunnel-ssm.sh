@@ -2,16 +2,13 @@ if [[ "$1" == "" ]];then
 	echo "must pass name from EC2 Name tag or instance id" && exit
 fi
 # find the instance ID based on Tag Name
-if [[ $1 == "i-"* ]];then
-INSTANCE_ID=$(aws ec2 describe-instances \
+if [[ $1 != "i-"* ]];then
+    INSTANCE_ID=$(aws ec2 describe-instances \
                --filter "Name=tag:Name,Values=$1" \
                --query "Reservations[].Instances[?State.Name == 'running'].InstanceId[]" \
                --output text)
 else
-INSTANCE_ID=$(aws ec2 describe-instances \
-               --instance-id $1 \
-               --query "Reservations[].Instances[?State.Name == 'running'].InstanceId[]" \
-               --output text)
+    INSTANCE_ID=`echo $1`
 fi
 
 if [[ "$INSTANCE_ID" == "i-"* ]]; then
