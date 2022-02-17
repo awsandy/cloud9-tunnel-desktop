@@ -102,7 +102,7 @@ Note: IAM Permissions may take a few minutes to propagate.
 
 Login to AWS using the AWS cli using your local machine
 
-Using the instance ID of the Cloud9 ID (MACOS & Linux):
+Using the instance ID of the Cloud9 (MACOS & Linux):
 
 ```bash
 INSTANCE_ID=i-xxxxxxxxxxxx
@@ -116,13 +116,14 @@ Now connect to your desktop using your RDP client software using `localhost:9999
 Login as `ec2-user` and the password you specified in step 1.
 
 
-Windows users can use a command similar to:
+Windows users can instead use a command similar to:
 
 ```
 aws ssm start-session --target i-xxxxxxxxxxx --document-name AWS-StartPortForwardingSession --parameters "portNumber"=["3389"],"localPortNumber"=["9999"]
 ```
 
-please see this blog post for further details on SSM port forwarding: 
+please see this blog post for further details on SSM port forwarding:
+ 
 https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/
 
 
