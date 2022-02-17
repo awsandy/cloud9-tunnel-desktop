@@ -49,14 +49,14 @@ else
   sudo xfs_growfs /dev/nvme0n1p1 #(Amazon Linux 2)
 fi
 
-echo "aws cli"
+echo "Install aws cli v2"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip -qq awscliv2.zip
 sudo ./aws/install
 rm -f awscliv2.zip
 
 date
-echo "======= X11 mate install ..."
+echo "======= X11 mate desktop install ..."
 sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
 sudo echo "PREFERRED=/usr/bin/mate-session" > /etc/sysconfig/desktop
 
@@ -72,20 +72,20 @@ sudo netstat -antup | grep xrdp
 
 echo "X11 stuff again ......"
 sudo amazon-linux-extras install -y mate-desktop1.x
-sudo echo "PREFERRED=/usr/bin/mate-session" > desktop
-sudo cp desktop /usr/bin/mate-session
+echo "PREFERRED=/usr/bin/mate-session" > desktop
+sudo cp desktop /etc/sysconfig/desktop
 echo "install chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -q
-sudo yum install google-chrome-stable_current_*.rpm -y -q
+sudo yum install google-chrome-stable_current_*.rpm -y -q 
 echo "DB Beaver"
 wget https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm -q
-sudo yum install dbeaver-ce-latest-stable.x86_64.rpm  -y -q
+sudo yum install dbeaver-ce-latest-stable.x86_64.rpm  -y -q 2> /dev/null
 echo "Lens"
 wget https://api.k8slens.dev/binaries/Lens-5.3.4-latest.20220120.1.x86_64.rpm -q
-sudo yum  install Lens-5.3.4-latest.20220120.1.x86_64.rpm  -y -q
+sudo yum  install Lens-5.3.4-latest.20220120.1.x86_64.rpm  -y -q 2> /dev/null
 echo "VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
-sudo yum install vscode.rpm  -y -q
+sudo yum install vscode.rpm  -y -q 2> /dev/null
 sudo cat /etc/sysconfig/desktop
 echo "look in /usr/share/applications"
 echo "Instance ID = $INSTANCE_ID"
