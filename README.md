@@ -2,6 +2,8 @@
 
 ### 1. Create a Cloud9 environment
 
+Use the AWS console to create a Cloud9 IDE
+
 Use the options:
 * `Create a new no-ingress EC2 instance for environment (access via Systems Manager)`
 
