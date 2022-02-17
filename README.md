@@ -68,7 +68,7 @@ passwd: all authentication tokens updated successfully.
 
 ### 3. Check your permissions 
 
-Ensure you have these permissions for your IAM user or role you use on your local machine:
+Ensure you have these permissions for your IAM user or IAM role you use on your **local machine**:
 
 ```json
 {
@@ -100,35 +100,25 @@ Note: IAM Permissions may take a few minutes to propagate.
 
 ### 3. Tunnel to your desktop from your local machine securely using SSM
 
-Login to AWS using the AWS cli from your local machine
+Login to AWS using the AWS cli using your local machine
 
-clone the repo to your local machine
-
-```
-git clone https://github.com/awsandy/cloud9-tunnel-desktop.git
-```
-
-Then use the helper script (bash) to start the tunnel, use either the instance id:
+Using the instance ID of the Cloud9 ID (MACOS & Linux):
 
 ```bash
-./tunnel-ssm.sh i-xxxxxxxxxxxxx
-```
-or the "Name" of the instance
-
-```bash
-./tunnel-ssm.sh aws-cloud9-test-xxxxxxxxxxxxxxxxxxx
-```
-
-Finally connect to your desktop using your RDP client software using `localhost:9999`
-
-Login as ec2-user and the password you specified in step 1.
-
-
-
-Windows users use a command similar to:
+INSTANCE_ID=i-xxxxxxxxxxxx
+aws ssm start-session --target $INSTANCE_ID \
+                       --document-name AWS-StartPortForwardingSession \
+                       --parameters '{"portNumber":["3389"],"localPortNumber":["9999"]}' &
 
 ```
-aws ssm start-session --target "Your Instance ID" --document-name AWS-StartPortForwardingSession --parameters "portNumber"=["3389"],"localPortNumber"=["9999"]
+
+Now connect to your desktop using your RDP client software using `localhost:9999` & login as ec2-user and the password you specified in step 1.
+
+
+Windows users can use a command similar to:
+
+```
+aws ssm start-session --target i-xxxxxxxxxxx --document-name AWS-StartPortForwardingSession --parameters "portNumber"=["3389"],"localPortNumber"=["9999"]
 ```
 
 please see this blog post for further details on SSM port forwarding: 
@@ -146,7 +136,7 @@ You should see icons for the applications we installed (Chrome, DBeaver, LENS an
 
 Right click on the applications icon and `Copy to Desktop`
 
-Enjoy the desktop !
+**:white_check_mark: Enjoy the desktop !**
 
 
 
