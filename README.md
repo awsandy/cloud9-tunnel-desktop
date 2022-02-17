@@ -2,10 +2,15 @@
 
 ### 1. Create a Cloud9 environment
 
-* Use the option `Create a new no-ingress EC2 instance for environment (access via Systems Manager)`
+Use the options:
+* `Create a new no-ingress EC2 instance for environment (access via Systems Manager)`
 
 This ensures there is no inbound access to the Cloud9 instance
 
+* Instance size `t3.small` (or larger)  
+* Use `Amazon Linux 2` (required)
+
+----
 
 ### 2. Install additional software
 
@@ -23,6 +28,19 @@ Install the desktop software and some sample apps
 cd cloud9-tunnel-desktop
 ./install-cloud9-desktop.sh
 ```
+
+This script:
+
+* Installs the AWS cli (v2)
+* Increases the root disk size to 32GB
+* Installs the Amazon Linux 2 minimal Desktop software
+* Installs some sample apps:
+* * The Chrome browser 
+* * DBeaver - an open source database management tools
+* * Microsoft's Visual Studio Code IDE
+* * LENS a tool for managing Kubernetes clusters (including EKS)
+  
+
 
 Create a password for the user `ec2-user`.
 
@@ -59,7 +77,7 @@ Ensure you have these permissions for your IAM user or role:
 }
 ```
 
-*Best Practice: reduce the scope of these permissions using a more specific resource and or adding a condition clause.*
+*Best Practice: reduce the scope of these permissions using a more specific resource and/or adding a condition clause.*
 
 Note: IAM Permissions may take a few minutes to propagate. 
 
@@ -84,5 +102,15 @@ Finally connect to your desktop using your RDP client software using `localhost:
 Login as ec2-user and the password you specified in step 1.
 
 
+----
+
+### Customize your Desktop with the new applications
+
+In your desktop open the file browser
+Navigate to `/usr/share/applications`
+
+You should see icons for the applications we installed (Chrome, DBeaver, LENS and Visual Studio Code)
+
+Right click on the applications icon and `Copy to Desktop`
 
 
