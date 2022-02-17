@@ -17,9 +17,8 @@ This ensures there is no inbound access to the Cloud9 instance
 **Clone the repo**
 
 ```bash
-cd ~environment
+cd ~/environment
 git clone https://github.com/awsandy/cloud9-tunnel-desktop.git
-
 ```
 
 **Install the desktop software and some sample apps**
@@ -102,7 +101,15 @@ Finally connect to your desktop using your RDP client software using `localhost:
 Login as ec2-user and the password you specified in step 1.
 
 
-Windows users please see the example on how to do the above using this blog post: https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/
+
+Windows users use a command similar to:
+
+```
+aws ssm start-session --target "Your Instance ID" --document-name AWS-StartPortForwardingSession --parameters "portNumber"=["3389"],"localPortNumber"=["9999"]
+```
+
+please see this blog post for further details on SSM port forwarding: 
+https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/
 
 
 ----
