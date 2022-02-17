@@ -14,7 +14,7 @@ This ensures there is no inbound access to the Cloud9 instance
 
 ### 2. Install additional software
 
-Clone the repo
+**Clone the repo**
 
 ```bash
 cd ~environment
@@ -22,7 +22,7 @@ git clone https://github.com/awsandy/cloud9-tunnel-desktop.git
 
 ```
 
-Install the desktop software and some sample apps
+**Install the desktop software and some sample apps**
 
 ```bash
 cd cloud9-tunnel-desktop
@@ -42,7 +42,7 @@ This script:
   
 
 
-Create a password for the user `ec2-user`.
+**Create a password for the user `ec2-user`.**
 
 ```bash
 passwd ec2-user
