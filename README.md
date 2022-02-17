@@ -86,20 +86,23 @@ Note: IAM Permissions may take a few minutes to propagate.
 
 ### 3. Tunnel to your desktop securely using SSM
 
-Use the helper script to start the tunnel, use either the instance id:
+Use the helper script (for MACOS) to start the tunnel, use either the instance id:
 
 ```bash
 ./tunnel-ssm.sh i-xxxxxxxxxxxxx
 ```
-or the "Name" of thr instance
+or the "Name" of the instance
 
 ```bash
-./tunnel-ssm.sh 
+./tunnel-ssm.sh aws-cloud9-test-xxxxxxxxxxxxxxxxxxx
 ```
 
 Finally connect to your desktop using your RDP client software using `localhost:9999`
 
 Login as ec2-user and the password you specified in step 1.
+
+
+Windows users please see the example on how to do the above using this blog post: https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-sessions-manager/
 
 
 ----
