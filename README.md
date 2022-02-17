@@ -1,5 +1,7 @@
 ## Starting a Desktop on Cloud9
 
+![Desktop](desktop.jpg)
+
 ### 1. Create a Cloud9 environment
 
 Use the AWS console to create a Cloud9 IDE
@@ -141,7 +143,7 @@ You should see icons for the applications we installed (Chrome, DBeaver, LENS an
 
 Right click on the applications icon and `Copy to Desktop`
 
-Enjoy the desktop:
+Enjoy the desktop !
 
-![Desktop](desktop.jpg)
+
 
