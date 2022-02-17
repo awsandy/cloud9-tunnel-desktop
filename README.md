@@ -20,7 +20,7 @@ This ensures there is no inbound access to the Cloud9 instance
 
 ### 2. Install additional software on the Cloud9 IDE
 
-**Clone the repo**
+**Clone this repo**
 
 ```bash
 cd ~/environment
@@ -40,10 +40,11 @@ This script:
 * Increases the root disk size to 32GB
 * Installs the Amazon Linux 2 minimal Desktop software
 * Installs some sample apps:
-* * The Chrome browser 
-* * DBeaver - an open source database management tools
-* * Microsoft's Visual Studio Code IDE
-* * LENS a tool for managing Kubernetes clusters (including EKS)
+  
+  * The Chrome browser 
+  * DBeaver - an open source database management tools
+  * Microsoft's Visual Studio Code IDE
+  * LENS a tool for managing Kubernetes clusters (including EKS)
   
 You may see some yum lock errors during the install of the sample apps, these should resolve themselves after seeing the error 3 or 4 times.
 
