@@ -3,7 +3,7 @@
 set +x
 cd ~/environment
 sudo yum install -q -y wget smartmontools deltarpm jq nmap
-sudo yum reinstall python3-pip -y -q
+sudo yum reinstall python3-pip -y
 # Increase the disk size to 32GB
 # ------  resize OS disk -----------
 
@@ -32,8 +32,8 @@ while [ \
 sleep 1
 done
 
-if [ $(readlink -f /dev/xvda) = "/dev/xvda" ]
-then
+$(readlink -f /dev/xvda) 2> /dev/null
+if [[ $? -eq 0 ]];then
   # Rewrite the partition table so that the partition takes up all the space that it can.
   sudo growpart /dev/xvda 1
  

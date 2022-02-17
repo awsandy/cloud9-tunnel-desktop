@@ -12,7 +12,7 @@ This ensures there is no inbound access to the Cloud9 instance
 
 ----
 
-### 2. Install additional software
+### 2. Install additional software on the Cloud9 IDE
 
 **Clone the repo**
 
