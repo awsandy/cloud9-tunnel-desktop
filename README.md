@@ -95,7 +95,13 @@ Note: IAM Permissions may take a few minutes to propagate.
 
 Login to AWS using the AWS cli from your local machine
 
-Then use the helper script (for MACOS) to start the tunnel, use either the instance id:
+clone the repo to your local machine
+
+```
+git clone https://github.com/awsandy/cloud9-tunnel-desktop.git
+```
+
+Then use the helper script (bash) to start the tunnel, use either the instance id:
 
 ```bash
 ./tunnel-ssm.sh i-xxxxxxxxxxxxx

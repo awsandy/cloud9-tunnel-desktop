@@ -88,3 +88,4 @@ wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q
 sudo cat /etc/sysconfig/desktop
 echo "look in /usr/share/applications"
+echo "Instance ID = $INSTANCE_ID"
