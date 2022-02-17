@@ -141,4 +141,5 @@ Right click on the applications icon and `Copy to Desktop`
 
 Enjoy the desktop:
 
-[]( | width=100)
+![Desktop](desktop.jpg)
+
