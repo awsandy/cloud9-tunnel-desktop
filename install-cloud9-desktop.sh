@@ -1,8 +1,10 @@
 #!/bin/bash
+
 set +x
 cd ~/environment
 sudo yum install -q -y wget smartmontools deltarpm jq nmap
-sudo yum reinstall python3-pip
+sudo yum reinstall python3-pip -y -q
+# Increase the disk size to 32GB
 # ------  resize OS disk -----------
 
 # Specify the desired volume size in GiB as a command-line argument. If not specified, default to 20 GiB.
@@ -47,8 +49,6 @@ else
   sudo xfs_growfs /dev/nvme0n1p1 #(Amazon Linux 2)
 fi
 
-
-
 echo "aws cli"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip -qq awscliv2.zip
@@ -57,14 +57,14 @@ unzip -qq awscliv2.zip
 date
 echo "======= X11 mate "
 sudo which  amazon-linux-extras
-sudo amazon-linux-extras install -y mate-desktop1.x
+sudo amazon-linux-extras install -y mate-desktop1.x 
 sudo echo "PREFERRED=/usr/bin/mate-session" > /etc/sysconfig/desktop
 
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
 sudo systemctl set-default graphical.target
 echo "======= xrdp"
-sudo yum -y install xrdp tigervnc-server
+sudo yum -y install xrdp tigervnc-server -q
 #yum -y install xrdp
 sudo systemctl start xrdp
 sudo systemctl enable xrdp
@@ -87,6 +87,4 @@ echo "VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q
 sudo cat /etc/sysconfig/desktop
-date
-# /usr/bin/google-chrome-stable
 echo "look in /usr/share/applications"
