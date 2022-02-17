@@ -52,12 +52,12 @@ fi
 echo "aws cli"
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip -qq awscliv2.zip
-./aws/install
+sudo ./aws/install
+rm -f awscliv2.zip
 
 date
-echo "======= X11 mate "
-sudo which  amazon-linux-extras
-sudo amazon-linux-extras install -y mate-desktop1.x 
+echo "======= X11 mate install ..."
+sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
 sudo echo "PREFERRED=/usr/bin/mate-session" > /etc/sysconfig/desktop
 
 sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -72,8 +72,8 @@ sudo netstat -antup | grep xrdp
 
 echo "X11 stuff again ......"
 sudo amazon-linux-extras install -y mate-desktop1.x
-sudo echo "PREFERRED=/usr/bin/mate-session" > /etc/sysconfig/desktop
-
+sudo echo "PREFERRED=/usr/bin/mate-session" > desktop
+sudo cp desktop /usr/bin/mate-session
 echo "install chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -q
 sudo yum install google-chrome-stable_current_*.rpm -y -q

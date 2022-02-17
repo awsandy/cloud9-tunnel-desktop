@@ -51,9 +51,9 @@ passwd ec2-user
 
 ----
 
-### 3. Check your permissions
+### 3. Check your permissions 
 
-Ensure you have these permissions for your IAM user or role:
+Ensure you have these permissions for your IAM user or role you use on your local machine:
 
 ```json
 {
@@ -83,9 +83,11 @@ Note: IAM Permissions may take a few minutes to propagate.
 
 -----
 
-### 3. Tunnel to your desktop securely using SSM
+### 3. Tunnel to your desktop from your local machine securely using SSM
 
-Use the helper script (for MACOS) to start the tunnel, use either the instance id:
+Login to AWS using the AWS cli from your local machine
+
+Then use the helper script (for MACOS) to start the tunnel, use either the instance id:
 
 ```bash
 ./tunnel-ssm.sh i-xxxxxxxxxxxxx
