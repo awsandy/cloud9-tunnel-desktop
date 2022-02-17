@@ -64,7 +64,7 @@ sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch
 
 sudo systemctl set-default graphical.target
 echo "======= xrdp"
-sudo yum -y install xrdp tigervnc-server -q
+sudo yum -y install xrdp tigervnc-server -q 2> /dev/null
 #yum -y install xrdp
 sudo systemctl start xrdp
 sudo systemctl enable xrdp
