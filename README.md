@@ -112,7 +112,8 @@ aws ssm start-session --target $INSTANCE_ID \
 
 ```
 
-Now connect to your desktop using your RDP client software using `localhost:9999` & login as ec2-user and the password you specified in step 1.
+Now connect to your desktop using your RDP client software using `localhost:9999` 
+Login as `ec2-user` and the password you specified in step 1.
 
 
 Windows users can use a command similar to:
