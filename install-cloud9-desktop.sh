@@ -71,18 +71,18 @@ sudo netstat -antup | grep 3389
 
 echo "X11 stuff again ......"
 sudo amazon-linux-extras install -y mate-desktop1.x
-echo "PREFERRED=/usr/bin/mate-session" > desktop
-sudo cp desktop /etc/sysconfig/desktop
-echo "install chrome"
+echo "PREFERRED=/usr/bin/mate-session" | sudo tee -a /etc/sysconfig/desktop
+
+echo "Install chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -q
 sudo yum install google-chrome-stable_current_*.rpm -y -q 
-echo "DB Beaver"
+echo "Install DBeaver"
 wget https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm -q
 sudo yum install dbeaver-ce-latest-stable.x86_64.rpm  -y -q 2> /dev/null
-echo "Lens"
+echo "Install Lens"
 wget https://api.k8slens.dev/binaries/Lens-5.3.4-latest.20220120.1.x86_64.rpm -q
 sudo yum  install Lens-5.3.4-latest.20220120.1.x86_64.rpm  -y -q 2> /dev/null
-echo "VS Code"
+echo "Install VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q 2> /dev/null
 sudo cat /etc/sysconfig/desktop
@@ -90,7 +90,5 @@ pw=$(date | base64 | head -c${1:-32};echo;)
 echo $pw > /home/ec2-user/.ec2user-creds && chmod 600 /home/ec2-user/.ec2user-creds
 sudo chown ec2-user /home/ec2-user/.ec2user-creds
 echo -e "${pw}\n${pw}" | sudo passwd ec2-user
-echo "ec2-user password in .ec2user-creds: "
-cat /home/ec2-user/.ec2user-creds
-echo "look in /usr/share/applications"
+echo "ec2-user password: $pw   (also stored in /home/ec2-user/.ec2user-creds)"
 echo "Instance ID = $INSTANCE_ID"
