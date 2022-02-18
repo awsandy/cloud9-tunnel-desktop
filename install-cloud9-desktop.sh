@@ -86,5 +86,11 @@ echo "VS Code"
 wget -O vscode.rpm https://go.microsoft.com/fwlink/?LinkID=760867 -q
 sudo yum install vscode.rpm  -y -q 2> /dev/null
 sudo cat /etc/sysconfig/desktop
+pw=$(date | base64 | head -c${1:-32};echo;)
+echo $pw > /home/ec2-user/.ec2user-creds && chmod 600 /home/ec2-user/.ec2user-creds
+sudo chown ec2-user /home/ec2-user/.ec2user-creds
+echo -e "${pw}\n${pw}" | sudo passwd ec2-user
+echo "ec2-user password in .ec2user-creds: "
+cat /home/ec2-user/.ec2user-creds
 echo "look in /usr/share/applications"
 echo "Instance ID = $INSTANCE_ID"
