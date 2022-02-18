@@ -48,21 +48,11 @@ This script:
   
 You may see some yum lock errors during the install of the sample apps, these should resolve themselves after seeing the error 3 or 4 times.
 
+A password is created for the `ec2-user` user and is output on the console at the end of the script output along with the instance id
 
-**Next - Create a password for the user `ec2-user`.**
+It is also stored in the hidden file: `/home/ec2-user/.ec2user-creds`
 
-```bash
-sudo passwd ec2-user
-```
-
-Enter a password twice ....
-
-```
-Changing password for user ec2-user.
-New password: 
-Retype new password: 
-passwd: all authentication tokens updated successfully.
-```
+This password will be needed in step 3.
 
 ----
 
@@ -129,7 +119,7 @@ https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-se
 
 ----
 
-### Customize your Desktop with the new applications
+### 4. Customize your Desktop with the new applications
 
 In your desktop open the file browser
 Navigate to `/usr/share/applications`
