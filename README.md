@@ -98,12 +98,14 @@ Using the instance ID of the Cloud9 (MACOS & Linux):
 INSTANCE_ID=i-xxxxxxxxxxxx
 aws ssm start-session --target $INSTANCE_ID \
                        --document-name AWS-StartPortForwardingSession \
-                       --parameters '{"portNumber":["3389"],"localPortNumber":["9999"]}' &
+                       --parameters '{"portNumber":["3389"],"localPortNumber":["9999"]}' 
 
 ```
 
 Now connect to your desktop using your RDP client software using `localhost:9999` 
 Login as `ec2-user` and the password you specified in step 1.
+
+Use `ctrl-c` to terminate the above command when you have finished with the desktop session.
 
 
 Windows users can instead use a command similar to:
