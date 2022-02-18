@@ -2,7 +2,7 @@
 
 set +x
 cd ~/environment
-sudo yum install -q -y wget smartmontools deltarpm jq nmap
+sudo yum install -q -y smartmontools deltarpm jq nmap
 sudo yum reinstall python3-pip -y
 # Increase the disk size to 32GB
 # ------  resize OS disk -----------
@@ -54,24 +54,24 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip -qq awscliv2.zip
 sudo ./aws/install
 rm -f awscliv2.zip
+rm -rf aws
 
 date
 echo "======= X11 mate desktop install ..."
-sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
+#sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
 
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -q
 
-sudo systemctl set-default graphical.target
 echo "======= xrdp"
 sudo yum -y install xrdp tigervnc-server -q 2> /dev/null
-#yum -y install xrdp
+
+echo "X11 desktop ......"
+sudo amazon-linux-extras install -y mate-desktop1.x
+echo "PREFERRED=/usr/bin/mate-session" | sudo tee -a /etc/sysconfig/desktop
+sudo systemctl set-default graphical.target
 sudo systemctl start xrdp
 sudo systemctl enable xrdp
 sudo netstat -antup | grep 3389
-
-echo "X11 stuff again ......"
-sudo amazon-linux-extras install -y mate-desktop1.x
-echo "PREFERRED=/usr/bin/mate-session" | sudo tee -a /etc/sysconfig/desktop
 
 echo "Install chrome"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -q
