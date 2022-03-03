@@ -52,7 +52,7 @@ A password is created for the `ec2-user` user and is output on the console at th
 
 It is also stored in the hidden file: `/home/ec2-user/.ec2user-creds`
 
-This password will be needed in step 3.
+This password will be needed in step 4.
 
 ----
 
@@ -88,7 +88,7 @@ Note: Modified IAM Permissions may take a few minutes to fully propagate.
 
 -----
 
-### 3. Tunnel to your desktop from your local machine securely using AWS Systems Manager
+### 4. Tunnel to your desktop from your local machine securely using AWS Systems Manager
 
 Login to AWS using the AWS cli using your local machine
 
@@ -103,7 +103,7 @@ aws ssm start-session --target $INSTANCE_ID \
 ```
 
 Now connect to your desktop using your RDP client software using `localhost:9999` 
-Login as `ec2-user` and the password you specified in step 1.
+Login as `ec2-user` and the password was created & output in step 2.
 
 Use `ctrl-c` to terminate the above command when you have finished with the desktop session.
 
@@ -121,7 +121,7 @@ https://aws.amazon.com/blogs/aws/new-port-forwarding-using-aws-system-manager-se
 
 ----
 
-### 4. Customize your Desktop with the new applications
+### 5. Customize your Desktop with the new applications
 
 In your desktop open the file browser
 Navigate to `/usr/share/applications`
