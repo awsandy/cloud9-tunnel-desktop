@@ -22,6 +22,8 @@ This ensures there is no inbound access to the Cloud9 instance
 
 **Clone this repo**
 
+From a Cloud9 Terminal window:
+
 ```bash
 cd ~/environment
 git clone https://github.com/awsandy/cloud9-tunnel-desktop.git
@@ -41,18 +43,16 @@ This script:
 * Installs the Amazon Linux 2 minimal Desktop software
 * Installs some sample apps:
   
-  * The Chrome browser 
+  * The Chrome web browser 
   * DBeaver - an open source database management tools
   * Microsoft's Visual Studio Code IDE
-  * LENS a tool for managing Kubernetes clusters (including EKS)
+  * LENS a tool for managing Kubernetes clusters
   
 You may see some yum lock errors during the install of the sample apps, these should resolve themselves after seeing the error 3 or 4 times.
 
-A password is created for the `ec2-user` user and is output on the console at the end of the script output along with the instance id
+A password is created for the `ec2-user` user and is output on the console at the end of the script output along with the Cloud9 EC2 instance id.
 
-It is also stored in the hidden file: `/home/ec2-user/.ec2user-creds`
-
-This password will be needed in step 4.
+The ec2-user password is also stored in the hidden file: `/home/ec2-user/.ec2user-creds`. This password will be needed in step 4.
 
 ----
 
@@ -83,7 +83,7 @@ Ensure you have these permissions for your IAM user or IAM role you use to sign 
 
 *Best Practice: reduce the scope of these permissions using a more specific resource and/or adding a condition clause.*
 
-Note: Modified IAM Permissions may take a few minutes to fully propagate. 
+Note: Modified IAM Permissions may take a minute to fully propagate. 
 
 
 -----
