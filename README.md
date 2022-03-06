@@ -87,8 +87,16 @@ Note: Modified IAM Permissions may take a few minutes to fully propagate.
 
 
 -----
+-----
 
 ### 4. Tunnel to your desktop from your local machine securely using AWS Systems Manager
+
+#### Pre-Requisites
+
+* Install the AWS CLI version 2  https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+* Install the ssm cli plugin https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+  
+Then:
 
 Login to AWS using the AWS cli using your local machine
 
