@@ -57,8 +57,7 @@ rm -f awscliv2.zip
 rm -rf aws
 
 date
-echo "======= X11 mate desktop install ..."
-#sudo amazon-linux-extras install -y mate-desktop1.x > /dev/null
+echo "======= epel repo ..."
 
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -q
 
@@ -73,7 +72,7 @@ sudo systemctl start xrdp
 sudo systemctl enable xrdp
 sudo netstat -antup | grep 3389
 
-echo "Install chrome"
+echo "Install Chrome web browser"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm -q
 sudo yum install google-chrome-stable_current_*.rpm -y -q 
 echo "Install DBeaver"
@@ -91,4 +90,4 @@ echo $pw > /home/ec2-user/.ec2user-creds && chmod 600 /home/ec2-user/.ec2user-cr
 sudo chown ec2-user /home/ec2-user/.ec2user-creds
 echo -e "${pw}\n${pw}" | sudo passwd ec2-user
 echo "ec2-user password: $pw   (also stored in /home/ec2-user/.ec2user-creds)"
-echo "Instance ID = $INSTANCE_ID"
+echo "INSTANCE_ID=$INSTANCE_ID"
