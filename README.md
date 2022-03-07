@@ -105,6 +105,9 @@ Using the instance ID of the Cloud9 (macOS & Linux):
 
 ```bash
 INSTANCE_ID=i-xxxxxxxxxxxx
+```
+
+```bash
 aws ssm start-session --target $INSTANCE_ID \
                        --document-name AWS-StartPortForwardingSession \
                        --parameters '{"portNumber":["3389"],"localPortNumber":["9999"]}' 
